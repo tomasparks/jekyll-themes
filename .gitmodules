@@ -4,3 +4,6 @@
 [submodule "jekyll-dokieli-theme"]
 	path = jekyll-dokieli-theme
 	url = git@github.com:tomasparks/jekyll-dokieli-theme.git
+[submodule "lab-notebook-jekyll"]
+	path = lab-notebook-jekyll
+	url = git@github.com:tomasparks/lab-notebook-jekyll.git
