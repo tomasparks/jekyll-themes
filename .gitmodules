@@ -1,0 +1,3 @@
+[submodule "Dynix-theme-jekyll"]
+	path = Dynix-theme-jekyll
+	url = git@github.com:tomasparks/Dynix-theme-jekyll.git

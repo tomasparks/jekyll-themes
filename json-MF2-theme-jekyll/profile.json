@@ -1,0 +1,12 @@
+{"@context": "https://www.w3.org/ns/activitystreams",
+ "type": "Person",
+ "id": "https://social.example/",
+ "name": "Tom Sparks",
+ "preferredUsername": "alyssa",
+ "summary": "Lisp enthusiast hailing from MIT",
+ "inbox": "https://social.example/inbox/",
+ "outbox": "https://social.example/outbox/",
+ "followers": "https://social.example/followers/",
+ "following": "https://social.example/following/",
+ "liked": "https://social.example/liked/"
+ }

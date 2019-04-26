@@ -1,0 +1,34 @@
+---
+layout: null
+pagination:
+  enabled: true
+  extension: json
+---
+{
+    "items": [
+        {
+                    "type": [
+                        "h-entry"
+                    ],
+                    "properties": {
+									"author": [{
+												{% include h-card.json %}
+											}],
+				"name": ["{{ page.title | escape }}"],
+				"url": ["{{ site.url }}{{ page.url }}"],
+				"published": ["{{ page.date  | date: "%F %T" }}"],
+				"category": [{% assign categories = page.categories %}{% for category in categories %}"{{category}}"{% if forloop.last == true %}{% else %}, {% endif %}{% endfor %}],
+				"syndication": ["{{ site.url }}{{ url }}"{% assign syndications = syndication %}
+				{% if syndications == true %}, 
+				{% for syndication in syndications %}"{{syndication}}"{% if forloop.last == true %}{% else %}, {% endif %}{% endfor %}
+				{% else %}
+				{% endif %}
+				 	],
+				"summary": [{
+					"html": {{ content | jsonify }},
+					"value": {{ content | strip_html  | jsonify }}
+				}]
+			},
+			"value": {{ content | jsonify }}
+		}]
+}

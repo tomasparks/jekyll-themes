@@ -1,0 +1,43 @@
+---
+layout: null
+pagination:
+  permalink: ''
+  per_page: 100
+  enabled: true
+  extension: json
+  indexpage: 'feed-all-:num'
+---
+{
+	"items": [{
+		"type": "h-feed",
+"properties": {"name": ["{{ site.name }}"],"url": ["{{ site.url }}"],
+			"summary": [{
+				"html": "",
+				"value": ""
+			}]
+		},
+		"children": [
+		    {% for post in paginator.posts %}
+		    {
+			"type": "h-entry",
+			"properties": {
+                "author": [{ {% include h-card.json %} }],
+				"name": ["{{ post.title | escape }}"],
+				"url": ["{{ site.url }}{{ post.url }}"],
+				"published": ["{{ post.date  | date: "%F %T" }}"],
+				"category": {{ post.categories | jsonify }}
+				
+				"syndication": {% assign syndications = post.syndication %} {{ syndications | jsonify }},
+				"summary": [{
+					"html": {{ post.excerpt | jsonify }},
+					"value": {{ post.excerpt | strip_html  | jsonify }}
+				}]
+			},
+			"value": {{ post.excerpt | jsonify }}
+		}
+		                        {% if forloop.last == true %}{% else %},{% endif %}
+                        {% endfor %}
+		
+		]
+	}]
+}
