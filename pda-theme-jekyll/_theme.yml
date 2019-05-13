@@ -1,9 +1,3 @@
-# Jekyll source / destination
-source:               .
-destination:          ./_site/
-baseurl: /
-
-
 plugins:
  - 'jekyll-seo-tag' # setting in seo.yml
  - 'jekyll/responsive_image'
@@ -27,7 +21,6 @@ defaults:
       type: posts
     values:
       layout: post
-      style: notebook
       author_profile: true
       read_time: true
       comments: true
@@ -78,13 +71,7 @@ autopages:
     title: 'Posts in category :cat'
     permalink: '/category/:cat/:num/'
 
-  # Collection pages, omit to disable
-  collections:
-    enabled: false
-    # layouts: 
-    #  - 'autopage_collection.html'
-    # title: 'Posts in collection :coll' # :coll is replaced by the collection name
-    # permalink: '/collection/:coll/'
+
   
   # Tag pages, omit to disable
   tags:
