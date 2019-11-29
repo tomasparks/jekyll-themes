@@ -117,10 +117,10 @@ pagination:
 
 	<ul>
 	{% for link in page.links %}
-	<li><a href="{{ link.url }}">{{link.title}}</a></li>
+	<li><a href="{{site.baseurl}}{{ link.url }}">{{link.title}}</a></li>
 	{% endfor %}
 	</ul></li>
 </ul>
-<div>background image from {{page.background.source_url}}</div>
+<div>background image from <a href="{{page.background.source_url}}">{{page.background.source_url}}</div>
 </body>
 </html>
