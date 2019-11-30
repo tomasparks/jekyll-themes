@@ -41,7 +41,7 @@
   } );
   </script>
 </head>
-<body background="{{page.background.image_url}}">
+<body background="{{site.baseurl}}/{{page.background.image_url}}">
 <article class="h-entry">
 <div id="accordion">
 	<h3 class="p-name">{{page.title}}</h3>
@@ -57,7 +57,7 @@
 	
 		{% if page.type == 'Artist' %}
 		<div css="align: left" class="vcard h-card">
-			<img class="photo u-photo" src="{{page.artist.photo}}" alt="[img] {{page.title}}" />
+			<img class="photo u-photo" src="{{site.baseurl}}/{{page.artist.photo}}" alt="[img] {{page.title}}" />
 			<div>Bio:<br />
 				<ul>
 					<li class="fn p-name">{{page.title}}</li>
